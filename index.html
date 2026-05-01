@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="quiz-container">
+    <section class="quiz-card" id="welcome-screen">
+      <h1 class="quiz-title">Welcome to Quiz Zone</h1>
+      <p class="quiz-description">Test your knowledge of JavaScript, HTML, and CSS in a fast and fun challenge.</p>
+      <p class="quiz-subtext">You get 10 seconds per question. If time runs out, the quiz automatically moves ahead.</p>
+      <div class="action-row">
+        <button id="start-btn" class="primary-btn glow">Start Quiz</button>
+      </div>
+    </section>
+
+    <section class="quiz-card" id="quiz-screen" style="display: none;">
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <p class="quiz-progress" id="quiz-progress"></p>
+      <p class="quiz-timer" id="quiz-timer">Time Left: 10s</p>
+      <h2 class="quiz-question" id="quiz-question"></h2>
+      <div class="option-wrap" id="quiz-options"></div>
+      <div class="action-row">
+        <button id="next-btn" class="primary-btn" disabled>Next Question</button>
+      </div>
+      <p class="timeout-msg" id="timeout-msg" hidden>Time is up. Loading the next question...</p>
+    </section>
+
+    <section class="quiz-card" id="result-screen" style="display: none;">
+      <h1 class="quiz-title">Quiz Completed</h1>
+      <div class="score-pill" id="score-pill"></div>
+      <p class="quiz-description" id="score-text"></p>
+      <p class="quiz-description" id="accuracy-text"></p>
+      <p class="quiz-subtext" id="result-message"></p>
+      <div class="action-row">
+        <button id="answers-btn" class="primary-btn">Review Answers</button>
+        <button id="restart-btn" class="primary-btn glow">Play Again</button>
+      </div>
+    </section>
+
+    <section class="quiz-card" id="answers-screen" style="display: none;">
+      <h1 class="quiz-title">All Answers</h1>
+      <div class="quiz-list" id="answers-list"></div>
+      <div class="action-row">
+        <button id="back-result" class="primary-btn">Back to Result</button>
+        <button id="restart-from-answers" class="primary-btn glow">Play Again</button>
+      </div>
+    </section>
+  </div>
+  <script src="quiz.js"></script>
+</body>
+</html>
